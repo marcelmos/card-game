@@ -315,10 +315,9 @@ function displayGameHistory(){
   const newLi = document.createElement('li');
 
   console.log(gameHistory);
-  console.log(gameHistory.length);
 
   for(let index = 0; index<gameHistory.length; index++){
-    newLi.innerHTML = "["+index+"] "+gameHistory[index];
+    newLi.innerHTML = gameHistory[index];
     displayHistory.appendChild(newLi);
   }
 }
