@@ -1,0 +1,13 @@
+{
+  "name": "black-jack",
+  "version": "1.0.0",
+  "description": "Black Jack card game with Deck of Cards API",
+  "main": "/src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcel Moś",
+  "license": "ISC",
+  "dependencies": {
+  }
+}

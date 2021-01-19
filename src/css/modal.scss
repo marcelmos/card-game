@@ -1,0 +1,103 @@
+.modal-window {
+  overflow-y: scroll;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0.25);
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  padding: 5em;
+  &:target {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal-window>div {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2em;
+    background-color: #214b26;
+  }
+  .modal-content{
+    background-color: #214b26;
+    padding: 50px;
+    border-radius: 15px;
+  }
+  header {
+    font-weight: bold;
+  }
+  h1 {
+    font-size: 150%;
+    margin: 0 0 15px;
+    text-align: center;
+  }
+}
+
+  .modal-close {
+    color: rgb(83, 83, 83);
+    line-height: 50px;
+    font-size: 2em;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 70px;
+    text-decoration: none;
+    &:hover {
+      color: black;
+    }
+  }
+
+  /* Demo Styles */
+
+  a {
+    color: inherit;
+  }
+
+  .container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-window div:not(:last-of-type) {
+    margin-bottom: 15px;
+  }
+
+  small {
+    color: #aaa;
+  }
+
+  .btn.how-play {
+    position: absolute;
+    left: 0;
+    bottom:0;
+    background-color: rgba(0, 122, 75, 0.6);
+    padding: 1em 1.5em;
+    border-top-right-radius: 15px;
+    text-decoration: none;
+    i {
+      padding-right: 0.3em;
+    }
+  }
+
+  .btn.history {
+    position: absolute;
+    right: 0;
+    bottom:0;
+    background-color: rgba(57, 138, 175, 0.6);
+    padding: 1em 1.5em;
+    border-top-left-radius: 15px;
+    text-decoration: none;
+    i {
+      padding-right: 0.3em;
+    }
+  }

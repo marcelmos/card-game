@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Black Jack</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/modal.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="gameStart()">
+    <div class="board">
+      <div class="enemy">
+        <div class="enemy-hand hand">
+        </div>
+        <h2 class="card-value-enemy"></h2>
+      </div>
+
+      <div class="player">
+        <h2 class="game-ended"></h2>
+        <div class="actions">
+          <ul>
+            <li><input type="button" class="action-btn" onclick="playerActions(this.value)" value="HIT"></li>
+            <li><input type="button" class="action-btn" onclick="playerActions(this.value)" value="STAND"></li>
+            <!-- <li><input type="button" class="action-btn" onclick="playerActions(this.value)" disabled value="DOUBLE DOWN"></li> -->
+            <li><input type="button" class="action-btn next" onclick="playerActions(this.value)" value="NEXT ROUND"></li>
+            <li><input type="button" class="action-btn new-game" onclick="window.location.reload();" value="NEW GAME"></li>
+          </ul>
+        </div>
+        <h2 class="card-value-player"></h2>
+        <div class="player-hand hand">
+        </div>
+        <div class="bet-section">
+          <div class="bet-buttons">
+            <ul>
+              <li><input type="button" class="bet-btn" onclick="betting(this.value)" value="5"></li>
+              <li><input type="button" class="bet-btn" onclick="betting(this.value)" value="25"></li>
+              <li><input type="button" class="bet-btn" onclick="betting(this.value)" value="50"></li>
+              <li><input type="button" class="bet-btn" onclick="betting(this.value);" value="200"></li>
+              <li><input type="button" class="bet-btn" onclick="betting(this.value);" value="500"></li>
+              <li><input type="button" class="bet-btn" onclick="betting(this.value);" value="2000"></li>
+              <li><input type="button" class="action-btn clear" onclick="betting(this.value)" value="Clear"></li>
+            </ul>
+          </div>
+          <h2 class="bet-value">0</h2>
+          <input type="button" class="action-btn submit" onclick="betting(this.value)" value="OK">
+        </div>
+        <div class="player-credit">
+          <h3>Your credit:</h3>
+          <p class="display-credit"></p>
+        </div>
+        <!-- MODALS -->
+        <!-- Modal Game History Button -->
+        <div class="container">
+          <div class="interior">
+            <a class="btn history" href="#open-modal">Game History</a>
+          </div>
+        </div>
+        <!-- Modal Game History -->
+        <div id="open-modal" class="modal-window">
+          <div class="modal-content">
+            <a href="#" title="Close" class="modal-close">✖</a>
+            <h1>Game History</h1>
+            <div>
+              <ul class="history-of-game">
+
+              </ul>
+            </div>
+            </div>
+        </div>
+
+        <!-- Modal H2P Button -->
+        <div class="container">
+          <div class="interior">
+            <a class="btn how-play" href="#open-modal-how-play">HOW TO PLAY?</a>
+          </div>
+        </div>
+        <!-- Modal H2P -->
+        <div id="open-modal-how-play" class="modal-window">
+          <div class="modal-content">
+            <a href="#" title="Close" class="modal-close">✖</a>
+            <h1>How to play</h1>
+            <div>
+              <h3>OBJECT OF THE GAME</h3>
+              <p>Each participant attempts to beat the dealer by getting a count as close to 21 as possible, without going over 21.<br>
+                <i>In this game you play 5 rounds.</i>
+              </p><br>
+
+              <h4>CARD VALUE</h4>
+              <p>Cards from 2 to 10 are equel they pip value.
+              KING, QUEEN, JACK are equal 10 points.
+              ACE are equal 1 or 11 depend on player.
+              </p><br>
+
+              <h4>ACTIONS</h4>
+              <p>Player had 3 action decision:</p>
+              <ul>
+                <li>HIT - Player get one card</li>
+                <li>STAND - Player pass his move</li>
+                <li>DOUBLE DOWN - player cards are split to two (avilable only if cards value are the same like KING and QUEEN)</li>
+              </ul><br>
+
+              <h4>WIN / LOSE CONDITIONS</h4>
+              <ul>
+                <li>Win:
+                  <ul>
+                    <li>Player win if his hand value is equal 21</li>
+                    <li>Player win if his hand value is greater then dealer hand (player hand is not over 21)</li>
+                    <li>Player win if dealer hand pass 21 points</li>
+                  </ul>
+                </li>
+                <li>Lose:
+                  <ul>
+                    <li>Player lose if hand value is smaller then dealer hand (dealer hand is not over 21)</li>
+                    <li>Player lose if hand value is over 21)</li>
+                  </ul>
+                </li>
+                <li>Draw:
+                  <ul>
+                    <li>When player and dealer hand value are equal (not over 21 points)</li>
+                  </ul>
+                </li>
+              </ul><br>
+
+              <p>If player win they earn 150% of his bet value, if draw they get back 100% of his bet, if lose they not earn back their bet.</p>
+            </div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
